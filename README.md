@@ -14,4 +14,10 @@
 
 - HTML5
 - CSS3
-- JavaScript 
+- JavaScript
+- 
+## 更新操作
+
+- git add index.html
+- git commit -m "更新网站设计"
+- git push 
