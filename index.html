@@ -91,7 +91,7 @@
 
         .container {
             max-width: 1000px;
-            margin: 70px auto 20px;
+            margin: 80px auto 20px;
             padding: 20px;
         }
 
@@ -105,7 +105,7 @@
         .category-header {
             display: flex;
             align-items: center;
-            padding: 10px 15px;
+            padding: 12px 15px;
             background-color: #f8f9fa;
             cursor: pointer;
             border-bottom: 1px solid #eee;
@@ -155,8 +155,9 @@
         .subcategory-content {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 12px;
             margin-left: 20px;
+            padding-bottom: 5px;
         }
 
         .link {
@@ -166,6 +167,10 @@
             font-size: 14px;
             margin-right: 15px;
             position: relative;
+            max-width: 200px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .link:hover {
@@ -199,17 +204,17 @@
 
         /* 响应式 */
         @media (max-width: 768px) {
+            .header {
+                padding: 8px 15px;
+            }
+            
             .container {
+                margin-top: 70px;
                 padding: 10px;
             }
             
-            .category-content {
-                padding: 10px;
-            }
-            
-            .subcategory-content {
-                flex-direction: column;
-                gap: 8px;
+            .link {
+                max-width: 100%;
             }
         }
     </style>
@@ -597,7 +602,7 @@
 
     <footer>
         <p>© <script>document.write(new Date().getFullYear())</script> 网址导航 - 让上网更便捷</p>
-        <p>（后缀名有“_T”的可能需要“魔法”才能访问）</p>
+        <p>（后缀名有"_T"的可能需要"魔法"才能访问）</p>
     </footer>
 
     <script>
@@ -656,6 +661,20 @@
                 document.body.appendChild(searchDiv);
                 searchInput.focus();
             }
+        });
+
+        // 修复子分类折叠初始状态
+        document.addEventListener('DOMContentLoaded', function() {
+            // 确保子分类初始状态正确显示
+            document.querySelectorAll('.subcategory-header').forEach(header => {
+                const content = header.nextElementSibling;
+                const arrow = header.querySelector('span:first-child');
+                if (content.style.display === 'none') {
+                    arrow.textContent = '▶';
+                } else {
+                    arrow.textContent = '▼';
+                }
+            });
         });
     </script>
 </body>
