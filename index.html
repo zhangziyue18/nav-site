@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网址导航</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .search-box {
+            max-width: 600px;
+            margin: 20px auto;
+            display: flex;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 12px;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .search-box input:focus {
+            border-color: #3498db;
+        }
+
+        .category {
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .category h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .links {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .link-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .link-item:hover {
+            background: #e9ecef;
+            transform: translateY(-2px);
+        }
+
+        .link-item img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #fff;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .links {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>网址导航</h1>
+        <div class="search-box">
+            <input type="text" placeholder="搜索网站...">
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="category">
+            <h2>常用搜索</h2>
+            <div class="links">
+                <a href="https://www.google.com" class="link-item">
+                    <img src="https://www.google.com/favicon.ico" alt="Google">
+                    <span>Google</span>
+                </a>
+                <a href="https://www.baidu.com" class="link-item">
+                    <img src="https://www.baidu.com/favicon.ico" alt="百度">
+                    <span>百度</span>
+                </a>
+                <a href="https://www.bing.com" class="link-item">
+                    <img src="https://www.bing.com/favicon.ico" alt="必应">
+                    <span>必应</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="category">
+            <h2>社交媒体</h2>
+            <div class="links">
+                <a href="https://www.weibo.com" class="link-item">
+                    <img src="https://weibo.com/favicon.ico" alt="微博">
+                    <span>微博</span>
+                </a>
+                <a href="https://www.zhihu.com" class="link-item">
+                    <img src="https://static.zhihu.com/heifetz/favicon.ico" alt="知乎">
+                    <span>知乎</span>
+                </a>
+                <a href="https://www.douyin.com" class="link-item">
+                    <img src="https://www.douyin.com/favicon.ico" alt="抖音">
+                    <span>抖音</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="category">
+            <h2>视频娱乐</h2>
+            <div class="links">
+                <a href="https://www.bilibili.com" class="link-item">
+                    <img src="https://www.bilibili.com/favicon.ico" alt="哔哩哔哩">
+                    <span>哔哩哔哩</span>
+                </a>
+                <a href="https://v.qq.com" class="link-item">
+                    <img src="https://v.qq.com/favicon.ico" alt="腾讯视频">
+                    <span>腾讯视频</span>
+                </a>
+                <a href="https://www.youku.com" class="link-item">
+                    <img src="https://www.youku.com/favicon.ico" alt="优酷">
+                    <span>优酷</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="category">
+            <h2>购物</h2>
+            <div class="links">
+                <a href="https://www.taobao.com" class="link-item">
+                    <img src="https://www.taobao.com/favicon.ico" alt="淘宝">
+                    <span>淘宝</span>
+                </a>
+                <a href="https://www.jd.com" class="link-item">
+                    <img src="https://www.jd.com/favicon.ico" alt="京东">
+                    <span>京东</span>
+                </a>
+                <a href="https://www.pinduoduo.com" class="link-item">
+                    <img src="https://www.pinduoduo.com/favicon.ico" alt="拼多多">
+                    <span>拼多多</span>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2024 网址导航 - 让上网更便捷</p>
+    </footer>
+
+    <script>
+        // 搜索功能
+        document.querySelector('.search-box input').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const links = document.querySelectorAll('.link-item');
+            
+            links.forEach(link => {
+                const text = link.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    link.style.display = 'flex';
+                } else {
+                    link.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
